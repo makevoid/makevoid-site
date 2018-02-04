@@ -8,7 +8,6 @@ gem "haml"
 gem "roda"
 gem 'graphql-client', require: 'graphql/client'
 
-# dev server
 gem 'puma'
 
 group :development do
