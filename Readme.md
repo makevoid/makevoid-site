@@ -1,8 +1,6 @@
-# App
+# makevoid-site
 
-simple Roda + Haml boilerplate app to quick-start your roda, view based apps
-
-includes Bulma CSS ( http://bulma.io )
+Coder "portfolio" site based on github graphql api and a local JSON cache
 
 
 ### Install
@@ -18,5 +16,11 @@ includes Bulma CSS ( http://bulma.io )
 
 then visit: <http://localhost:3000>
 
+### Forking
+
+Edit the code and replace all the instances of `makevoid` with your github username, remove my logo set your own name and you will be good to go!
+
+
+Enjoy
 
 @makevoid
