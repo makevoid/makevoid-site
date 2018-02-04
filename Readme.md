@@ -1,6 +1,8 @@
 # makevoid-folio
 
-Coder "portfolio" site based on github graphql api and a local JSON cache
+## Github based coder "portfolio" site 
+
+Coder "portfolio" site based on Github graphql api (v4) and a local JSON cache
 
 
 ### Install
