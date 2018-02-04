@@ -20,15 +20,7 @@ class App < Roda
       view 'index'
     }
 
-    r.on("foo") {
-      r.is {
-        r.get {
-          view 'page_one'
-        }
-      }
-    }
-
-    r.public if APP_ENV != "production"
+    r.public if ENV["SERVE_ASSETS"] == "1" || APP_ENV != "production"
   end
 
   not_found do
@@ -46,4 +38,7 @@ class App < Roda
       raise err
     end
   end
+
+  freeze
+  
 end
