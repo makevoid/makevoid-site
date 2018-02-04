@@ -1,3 +1,5 @@
-%h1 Home
+%h1 Latest projects
 
-%p Welcome!
+.columns.is-multiline
+  - GH.repos.each do |repo|
+    = partial "repo", locals: { repo: repo }

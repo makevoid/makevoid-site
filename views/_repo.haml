@@ -1,0 +1,31 @@
+:ruby
+  url   = "https://github.com/makevoid/#{repo.name}"
+  stars = repo.stargazers.total_count
+
+.column.is-4-desktop.is-6
+  .card
+    .card-content
+      %p.title.is-4
+        %a{href: url}= repo.name
+      %p.subtitle.is-6
+        = repo.description
+      %p.tags
+        - repo.repository_topics.edges.map(&:node).map(&:topic).each do |topic|
+          %span.tag.is-info= topic.name
+        - repo.languages.edges.map(&:node).each do |lang|
+          %span.tag.is-primary= lang.name
+
+    -# %footer.card-footer
+    -#   %p.card-footer-item
+    -#     %span
+    -#       %a{href: url} View
+    -#   - if stars > 1
+    -#     %p.card-footer-item
+    -#       %span
+    -#         ★: #{stars}
+
+    - if stars > 1
+      %footer.card-footer
+        %p.card-footer-item
+          %span
+            ★ #{stars}

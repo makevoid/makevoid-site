@@ -1,2 +1,5 @@
 .sass-cache
 .DS_Store
+tmp/cache/*.json
+.env.local
+.github_token
