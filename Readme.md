@@ -1,4 +1,4 @@
-# makevoid-site
+# makevoid-folio
 
 Coder "portfolio" site based on github graphql api and a local JSON cache
 
