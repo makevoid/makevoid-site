@@ -25,7 +25,7 @@ class GH
           privacy: PUBLIC,
           isFork: false,
           orderBy: {
-            field: UPDATED_AT,
+            field: PUSHED_AT,
             direction: DESC,
           },
           affiliations: OWNER
