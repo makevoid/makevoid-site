@@ -1,0 +1,42 @@
+query {
+  user(login: "makevoid") {
+    repositories(
+      first: 100,
+      privacy: PUBLIC,
+      isFork: false,
+      orderBy: {
+        field: PUSHED_AT,
+        direction: DESC,
+      },
+      affiliations: OWNER
+    ) {
+      edges {
+        node {
+          name
+          description
+          createdAt
+          updatedAt
+          stargazers {
+            totalCount
+          }
+          languages(first: 2) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          repositoryTopics(first: 10) {
+            edges {
+              node {
+                topic {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

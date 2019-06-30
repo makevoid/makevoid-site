@@ -17,6 +17,7 @@ class GH
 
   Client = GQLClient.new schema: Schema, execute: HTTP
 
+  # TODO: load query.graphql
   ReposQuery = Client.parse <<-'GRAPHQL'
     query {
       user(login: "makevoid") {

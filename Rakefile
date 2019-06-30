@@ -2,9 +2,7 @@ require_relative 'config/env'
 require 'pp'
 
 task :deploy do
-  Rake::Task["rancher_finish"].invoke
-  sh "docker build . -t makevoid/makevoid-site && docker push makevoid/makevoid-site:latest"
-  Rake::Task["rancher_upgrade"].invoke
+  # use new docker swarm rake based deployment
 end
 
 desc 'Run app with rerun'
@@ -16,7 +14,6 @@ desc "Dump graphql schema to json"
 task :graphql_dump do
   GraphQL::Client.dump_schema GH::HTTP, "data/github_schema.json"
 end
-
 
 desc "Repos test call"
 task :repos do
@@ -46,34 +43,5 @@ def post(url, params)
   req['Authorization'] = basic_auth
   resp = Net::HTTP.start(uri.hostname, uri.port) { |http| http.request(req) }
   resp = Oj.load resp.body
-  # puts "POST #{url}"
-  # pp resp
-  # puts
   resp
-end
-
-desc "rancher_launchconf"
-task :rancher_launchconf do
-  conf = get "http://ranch.mkv.run:8080/v2-beta/projects/1a5/services/1s12"
-  puts Oj.dump conf["upgrade"]["inServiceStrategy"]
-end
-
-
-desc "rancher_upgrade"
-task :rancher_upgrade do
-  conf = get "http://ranch.mkv.run:8080/v2-beta/projects/1a5/services/1s12"
-  strategy = conf["upgrade"]["inServiceStrategy"]
-  project_id = "1a5"
-  service_id = "1s12"
-  params = {
-    "inServiceStrategy" => strategy
-  }
-  post "http://ranch.mkv.run:8080/v2-beta/projects/#{project_id}/services/#{service_id}/?action=upgrade", params
-end
-
-desc "rancher_finish"
-task :rancher_finish do
-  project_id = "1a5"
-  service_id = "1s12"
-  post "http://ranch.mkv.run:8080/v2-beta/projects/#{project_id}/services/#{service_id}/?action=finishupgrade", {}
 end
