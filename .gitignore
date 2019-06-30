@@ -3,3 +3,4 @@
 tmp/cache/*.json
 .env.local
 .github_token
+node_modules
