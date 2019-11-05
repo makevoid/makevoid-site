@@ -17,6 +17,9 @@ class App < Roda
 
   route do |r|
     r.root {
+      # TODO: use sucker-punch or async
+      Thread.new { MIX.track 'anonymous', 'homepage visit' }
+
       view 'index'
     }
 
@@ -40,5 +43,5 @@ class App < Roda
   end
 
   freeze
-  
+
 end

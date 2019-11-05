@@ -10,7 +10,7 @@ gem 'graphql-client', require: 'graphql/client'
 
 gem 'puma'
 
-gem "mixpanel"
+gem "mixpanel-ruby"
 
 group :development do
   gem "rerun"

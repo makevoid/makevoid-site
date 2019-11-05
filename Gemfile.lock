@@ -8,7 +8,6 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
     concurrent-ruby (1.1.5)
-    escape (0.0.4)
     ffi (1.11.1)
     graphql (1.9.15)
     graphql-client (0.16.0)
@@ -21,15 +20,11 @@ GEM
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
-    json (2.2.0)
     listen (3.2.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     minitest (5.13.0)
-    mixpanel (4.1.1)
-      escape
-      json
-      rack
+    mixpanel-ruby (2.2.1)
     nio4r (2.5.2)
     oj (3.9.2)
     puma (4.2.1)
@@ -57,7 +52,7 @@ DEPENDENCIES
   haml
   hashie
   inflecto
-  mixpanel
+  mixpanel-ruby
   oj
   puma
   rerun
