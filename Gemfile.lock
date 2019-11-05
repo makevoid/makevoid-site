@@ -1,45 +1,53 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.2)
+    activesupport (6.0.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    concurrent-ruby (1.1.4)
-    ffi (1.10.0)
-    graphql (1.8.13)
-    graphql-client (0.14.0)
-      activesupport (>= 3.0, < 6.0)
-      graphql (~> 1.6)
-    haml (5.0.4)
+      zeitwerk (~> 2.1, >= 2.1.8)
+    concurrent-ruby (1.1.5)
+    escape (0.0.4)
+    ffi (1.11.1)
+    graphql (1.9.15)
+    graphql-client (0.16.0)
+      activesupport (>= 3.0)
+      graphql (~> 1.8)
+    haml (5.1.2)
       temple (>= 0.8.0)
       tilt
-    hashie (3.6.0)
-    i18n (1.5.2)
+    hashie (4.0.0)
+    i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
-    listen (3.1.5)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-      ruby_dep (~> 1.2)
-    minitest (5.11.3)
-    oj (3.7.6)
-    puma (3.12.0)
-    rack (2.0.6)
+    json (2.2.0)
+    listen (3.2.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
+    minitest (5.13.0)
+    mixpanel (4.1.1)
+      escape
+      json
+      rack
+    nio4r (2.5.2)
+    oj (3.9.2)
+    puma (4.2.1)
+      nio4r (~> 2.0)
+    rack (2.0.7)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rerun (0.13.0)
       listen (~> 3.0)
-    roda (3.15.0)
+    roda (3.25.0)
       rack
-    ruby_dep (1.5.0)
-    temple (0.8.0)
+    temple (0.8.2)
     thread_safe (0.3.6)
-    tilt (2.0.9)
+    tilt (2.0.10)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    zeitwerk (2.2.1)
 
 PLATFORMS
   ruby
@@ -49,6 +57,7 @@ DEPENDENCIES
   haml
   hashie
   inflecto
+  mixpanel
   oj
   puma
   rerun

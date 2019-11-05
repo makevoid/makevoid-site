@@ -70,7 +70,6 @@ class GH
     repositories = cache ReposQuery do
       GH::Client.query(ReposQuery).data
     end
-
     repositories.user.repositories.edges.map &:node
   end
 
