@@ -29,7 +29,8 @@ class GH
             field: PUSHED_AT,
             direction: DESC,
           },
-          affiliations: OWNER
+          affiliations: OWNER,
+          ownerAffiliations: OWNER
         ) {
           edges {
             node {
