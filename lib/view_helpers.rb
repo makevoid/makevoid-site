@@ -16,7 +16,7 @@ module ViewHelpers
   )
 
   CAPITALIZE_KEYWORDS = %w(
-    sass web3 roda ethereum bapp bitcoin dogecoin litecoin docker inesita geth solc clearwater packt transifex unbound clef bulma kovan rinkeby unity ruby twilio redux rollup bitcore 
+    sass web3 roda ethereum bapp bitcoin dogecoin litecoin docker inesita geth solc clearwater packt transifex unbound clef bulma kovan rinkeby unity ruby twilio redux rollup bitcore
   )
 
   CAPITALIZE_KEYWORDS_BOUNDARY = %w(
@@ -24,7 +24,6 @@ module ViewHelpers
   )
 
   def upcase_keywords(title)
-
     UPCASE_KEYWORDS.each do |keyword|
       title.gsub!(/#{keyword}/i, keyword.upcase)
     end

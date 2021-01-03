@@ -23,6 +23,10 @@ class App < Roda
       view 'index'
     }
 
+    r.get("videos") {
+      view 'videos'
+    }
+
     r.public if ENV["SERVE_ASSETS"] == "1" || APP_ENV != "production"
   end
 

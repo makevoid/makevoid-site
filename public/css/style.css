@@ -1,3 +1,7 @@
+html, html body {
+  box-sizing: border-box;
+}
+
 .content footer p:not(:last-child) {
   margin-bottom: 0;
 }

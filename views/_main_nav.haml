@@ -1,0 +1,36 @@
+:ruby
+  main_nav_path = -> {
+    request.path.split "/"
+  }
+
+  main_nav_home = -> {
+    request.path == "/"
+  }
+
+  main_nav_page = -> (page) {
+    main_nav_path.()[1] == page
+  }
+
+:css
+  .main-nav > ul {
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .main-nav > ul > li {
+    display: inline-block;
+    width: 49.5%;
+    text-align: center;
+  }
+  .main-nav > ul > li > a {
+    width: 100%;
+  }
+  .main-nav > ul > li.selected {
+    background: #EEE;
+  }
+
+%section.main-nav
+  %ul
+    %li{ class: "#{"selected" if main_nav_home.()}" }
+      %a{ href: "/" }       Code
+    %li{ class: "#{"selected" if main_nav_page.("videos")}" }
+      %a{ href: "/videos" } Videos

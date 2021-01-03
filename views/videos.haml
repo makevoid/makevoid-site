@@ -4,8 +4,24 @@
     YyzI6U4-5VM
   )
 
-%iframe{:allow => "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{video_id}", :width => "560"}
-https://www.youtube.com/watch?v=JftGnxQI8pI
+%h1 Latest videos
+
+.columns.is-multiline
+  - video_ids.each do |video_id|
+    - video_name = "video 1"
+    - url = "https://www.youtube.com/embed/#{video_id}"
+    .column.is-6-desktop.is-6
+      .card
+        .card-content
+          -# %p.title.is-6
+          -#   %a{ href: url }= prettify_title video_name
+          %p.subtitle.is-6
+            %iframe.video{ allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: url }
 
 
-https://www.youtube.com/watch?v=YyzI6U4-5VM
+:css
+  iframe.video {
+    width: 100%;
+    height: 20%;
+    min-height: 300px;
+  }
