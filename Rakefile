@@ -22,3 +22,13 @@ task :repos do
   repos = GH.repos
   pp repos
 end
+
+desc "Build docker container"
+task :docker_build do
+  sh "docker-compose build"
+end
+
+desc "Build and push container release to dockerhub"
+task :docker_release do
+  sh "docker-compose build && docker-compose push"
+end
