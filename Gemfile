@@ -10,7 +10,7 @@ gem 'graphql-client', require: 'graphql/client'
 
 gem 'puma'
 
-gem "pandoc-ruby"
+gem "kramdown"
 gem "mixpanel-ruby"
 
 group :development do

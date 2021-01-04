@@ -20,6 +20,12 @@ MIXPANEL_TOKEN = Env["MIXPANEL_TOKEN"]
 
 MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
 
+require 'tilt/kramdown'
+module Haml::Filters
+  remove_filter("Markdown")
+  register_tilt_filter "Markdown", :template_class => Tilt::KramdownTemplate
+end
+
 require "graphql/client/http"
 require_relative '../lib/cache'
 require_relative '../lib/gh'
