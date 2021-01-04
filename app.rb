@@ -18,12 +18,13 @@ class App < Roda
   route do |r|
     r.root {
       # TODO: use sucker-punch or async
-      Thread.new { MIX.track 'anonymous', 'homepage visit' }
+      Thread.new { MIX.track 'anonymous', 'homepage-visit' }
 
       view 'index'
     }
 
     r.get("videos") {
+      Thread.new { MIX.track 'anonymous', 'videos-page-visit' }
       view 'videos'
     }
 

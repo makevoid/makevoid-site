@@ -24,6 +24,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     minitest (5.14.2)
+    mixpanel-ruby (2.2.2)
     nio4r (2.5.4)
     oj (3.10.18)
     pandoc-ruby (2.1.4)
@@ -51,6 +52,7 @@ DEPENDENCIES
   haml
   hashie
   inflecto
+  mixpanel-ruby
   oj
   pandoc-ruby
   puma
