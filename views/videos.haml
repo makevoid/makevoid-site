@@ -11,12 +11,13 @@
   - video_ids.each do |video_id|
     - video_name = "video 1"
     - url = "https://www.youtube.com/embed/#{video_id}"
-    .column.is-6-desktop.is-6
+    -# TODO: use 6 when we have 4 videos
+    .column.is-12-desktop.is-12
       .card
         .card-content
-          -# %p.title.is-6
+          -# %p.title.is-12
           -#   %a{ href: url }= prettify_title video_name
-          %p.subtitle.is-6
+          %p.subtitle.is-12
             %iframe.video{ allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: url }
 
 
@@ -26,11 +27,12 @@
 
     I'm makevoid, I code and I make Drone / Cinematic videos! I just started this channel, check out the first two videos and subscribe to get more!
 
-    Francesco 'makevoid' Canessa
+    \@makevoid
 
 :css
   iframe.video {
     width: 100%;
     height: 20%;
-    min-height: 300px;
+    /* min-height: 300px; for is-6 */
+    min-height: 600px;
   }
