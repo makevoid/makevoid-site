@@ -16,9 +16,9 @@ Oj.default_options = { mode: :object }
 require_relative '../lib/env'
 Env.load!
 GITHUB_TOKEN = Env["GITHUB_TOKEN"]
-MIXPANEL_TOKEN = Env["MIXPANEL_TOKEN"]
+# MIXPANEL_TOKEN = Env["MIXPANEL_TOKEN"]
 
-MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
+# MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
 
 require "graphql/client/http"
 require_relative '../lib/cache'
