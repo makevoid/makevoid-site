@@ -18,6 +18,14 @@ Env.load!
 GITHUB_TOKEN = Env["GITHUB_TOKEN"]
 MIXPANEL_TOKEN = Env["MIXPANEL_TOKEN"]
 
+# https://youtu.be/<video_id>
+
+VIDEO_IDS = %w(
+  JftGnxQI8pI
+  YyzI6U4-5VM
+  KTTb6DYP8ew
+)
+
 MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
 
 require 'tilt/kramdown'
