@@ -36,6 +36,13 @@
             .s5
             %h2.subtitle
               Francesco Canessa
+            %ul.social
+              - SOCIAL.each do |social_name, social_url|
+                - icon = Icon.new name: social_name
+                %li
+                  %a{ href: social_url }
+                    :preserve
+                      #{icon.to_html}
 
       = partial "main_nav"
 

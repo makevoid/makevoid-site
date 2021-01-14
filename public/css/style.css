@@ -20,11 +20,31 @@ html, html body {
 .hs50 { margin-left: 50px; }
 
 
-body, html { background: #FAFAFA; }
+body, html {
+  background: #FAFAFA;
+}
 
-.hero-body h1.title > a { text-decoration: none; border: 0; }
+.hero-body h1.title > a {
+  text-decoration: none; border: 0;
+}
 
-.card-content p.title { margin-bottom: 31px; }
+.card-content p.title {
+  margin-bottom: 31px;
+}
 
-.tags .tag.is-info {    background-color: rgba(32, 156, 238, 0.8); }
-.tags .tag.is-primary { background-color: rgba(32, 156, 238, 1); }
+.tags .tag.is-info {
+  background-color: rgba(32, 156, 238, 0.8);
+}
+
+.tags .tag.is-primary {
+  background-color: rgba(32, 156, 238, 1);
+}
+
+.social > li {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.social > li > a > .icon {
+  filter: invert(100%);
+}

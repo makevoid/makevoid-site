@@ -37,3 +37,5 @@ end
 require "graphql/client/http"
 require_relative '../lib/cache'
 require_relative '../lib/gh'
+require_relative '../lib/icon'
+require_relative '../lib/social'
