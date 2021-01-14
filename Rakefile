@@ -32,3 +32,5 @@ desc "Build and push container release to dockerhub"
 task :docker_release do
   sh "docker-compose build && docker-compose push"
 end
+
+task release: :docker_release
