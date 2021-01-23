@@ -25,6 +25,7 @@ VIDEO_IDS = %w(
   YyzI6U4-5VM
   KTTb6DYP8ew
   Y2fO8eD4nvY
+  2Knh8DQogaA
 )
 
 MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
