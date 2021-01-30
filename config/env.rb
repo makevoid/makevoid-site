@@ -26,7 +26,10 @@ VIDEO_IDS = %w(
   KTTb6DYP8ew
   Y2fO8eD4nvY
   2Knh8DQogaA
+  vYThRYmdRW0
 )
+
+# append new videos to add them
 
 MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
 
