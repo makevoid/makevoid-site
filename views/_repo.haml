@@ -1,16 +1,30 @@
 :ruby
   url   = "https://github.com/makevoid/#{repo.name}"
-  stars = repo.stargazers.total_count
+  stars = repo.stars_count
+
+:css
+  .content .card-image > figure {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .card-image > figure > img { width: 100%; height: auto !important; max-height: 100px; }
+  .card-image { max-height: 100px; }
 
 .column.is-4-desktop.is-6
   .card
+    - if repo.image_exists?
+      .card-image
+        .card-image-custom
+          %img{ alt: "Repository Screenshot", src: repo.screenshot_url }/
     .card-content
       %p.title.is-4
         %a{href: url}= prettify_title repo.name
       %p.subtitle.is-6
         = repo.description
+      -# %p.updated_at
+      -#   = repo.updated_at
       %p.tags
-        - repo.repository_topics.edges.map(&:node).map(&:topic).each do |topic|
+        - repo.repository_topics_all.each do |topic|
           %span.tag.is-info= topic.name
         - repo.languages.edges.map(&:node).each do |lang|
           %span.tag.is-primary= lang.name

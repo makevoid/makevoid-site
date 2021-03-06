@@ -48,3 +48,27 @@ body, html {
 .social > li > a > .icon {
   filter: invert(100%);
 }
+
+/* helpers */
+
+.align-right {
+  float: right;
+}
+
+.updated_at_lable {
+  margin-right: 3%;
+  margin-top: 6px;
+  padding-bottom: 10px;
+}
+
+.card > .card-image {
+  min-height: 160px;
+}
+
+.card > .card-image > .card-image-custom {
+  max-height: 160px;
+  overflow: hidden;
+}
+
+.card > .card-image > .card-image-custom > img {
+}

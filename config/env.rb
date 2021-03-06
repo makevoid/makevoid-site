@@ -1,3 +1,4 @@
+require 'net/https'
 require 'bundler'
 
 Encoding.default_internal = Encoding::UTF_8
@@ -13,7 +14,7 @@ APP_ENV = ENV["RACK_ENV"] || "development"
 
 Oj.default_options = { mode: :object }
 
-require_relative '../lib/env'
+require_relative '../lib/env_lib'
 Env.load!
 GITHUB_TOKEN = Env["GITHUB_TOKEN"]
 MIXPANEL_TOKEN = Env["MIXPANEL_TOKEN"]
@@ -40,6 +41,7 @@ module Haml::Filters
 end
 
 require "graphql/client/http"
+require_relative '../lib/monkeypatches'
 require_relative '../lib/cache'
 require_relative '../lib/gh'
 require_relative '../lib/icon'

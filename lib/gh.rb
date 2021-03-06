@@ -30,7 +30,7 @@ class GH
             direction: DESC,
           },
           affiliations: OWNER,
-          ownerAffiliations: OWNER
+          ownerAffiliations: OWNER,
         ) {
           edges {
             node {
@@ -56,6 +56,9 @@ class GH
                     }
                   }
                 }
+              }
+              content:object(expression: "master:screenshots/main.jpg") {
+                oid
               }
             }
           }

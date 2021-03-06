@@ -1,4 +1,4 @@
-class Env
+class EnvLib
   def self.load!
     env_glob = File.read "#{APP_PATH}/.env"
     env_loc  = File.read "#{APP_PATH}/.env.local"
@@ -39,3 +39,5 @@ class Env
   end
 
 end
+
+Env = EnvLib
