@@ -1,11 +1,11 @@
 :ruby
   video_ids = VIDEO_IDS
-  video_ids.reverse!
+  video_ids = video_ids.reverse
 
 %h1 Latest videos
 
 .columns.is-multiline
-  - video_ids.reverse.each do |video_id|
+  - video_ids.each do |video_id|
     - video_name = "video 1"
     - url = "https://www.youtube.com/embed/#{video_id}"
     .column.is-6-desktop.is-12
