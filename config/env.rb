@@ -28,6 +28,7 @@ VIDEO_IDS = %w(
   Y2fO8eD4nvY
   2Knh8DQogaA
   vYThRYmdRW0
+  6Kt9tuQlNLw
 )
 
 # append new videos to add them
