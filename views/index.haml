@@ -2,7 +2,7 @@
 
 .columns.is-multiline
   - GH.repos.each do |repo|
-    - unless repo. repository_topics_include_filter_tag?
+    - unless repo.repository_topics_include_filter_tag?
       = partial "repo", locals: { repo: repo }
 
 .s20
