@@ -4,6 +4,10 @@ class GraphQL::Client::Schema::ObjectClass
     repository_topics.edges.map(&:node).map &:topic
   end
 
+  def repository_topics_include_filter_tag?
+    repository_topics_all.map(&:name).include? "v"
+  end
+
   def stars_count
     stargazers.total_count
   end
@@ -15,5 +19,5 @@ class GraphQL::Client::Schema::ObjectClass
   def screenshot_url
     "https://raw.githubusercontent.com/makevoid/#{name}/master/screenshots/main.jpg"
   end
-  
+
 end

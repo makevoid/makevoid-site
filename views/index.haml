@@ -1,5 +1,13 @@
-%h1 Latest open source projects
+%h1 Open Source projects (latest)
 
 .columns.is-multiline
   - GH.repos.each do |repo|
-    = partial "repo", locals: { repo: repo }
+    - unless repo. repository_topics_include_filter_tag?
+      = partial "repo", locals: { repo: repo }
+
+.s20
+%p.is-size-4
+  check out
+  %a{ href: "https://github.com/makevoid?tab=repositories" } github.com/makevoid
+  for the full list of repositories
+.s3
