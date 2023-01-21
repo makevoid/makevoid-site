@@ -1,13 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.0)
+    activesupport (7.0.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.10)
     ffi (1.14.2)
     graphql (1.11.6)
     graphql-client (0.16.0)
@@ -17,7 +16,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashie (4.1.0)
-    i18n (1.8.6)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
     kramdown (2.3.0)
@@ -25,7 +24,7 @@ GEM
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    minitest (5.14.2)
+    minitest (5.17.0)
     mixpanel-ruby (2.2.2)
     nio4r (2.5.4)
     oj (3.10.18)
@@ -42,9 +41,8 @@ GEM
       rack
     temple (0.8.2)
     tilt (2.0.10)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
