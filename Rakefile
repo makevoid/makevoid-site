@@ -7,7 +7,8 @@ end
 
 desc 'Run app with rerun'
 task :run do
-  sh "rerun -p \"**/*.{rb}\" -- bundle exec rackup"
+  # sh "rerun -p \"**/*.{rb}\" -- bundle exec rackup"
+  sh "bundle exec rackup -p 3000"
 end
 
 task default: :run

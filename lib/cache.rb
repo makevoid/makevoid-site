@@ -27,7 +27,7 @@ module Cache
 
   def cache_fresh?(key)
     path = cache_file key
-    File.exists?(path) && Time.now < File.mtime(path) + CACHE_TIME
+    File.exist?(path) && Time.now < File.mtime(path) + CACHE_TIME
   end
 
   def cache_file(key)

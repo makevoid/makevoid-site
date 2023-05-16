@@ -8,11 +8,13 @@ gem "haml"
 gem "roda"
 gem 'graphql-client', require: 'graphql/client'
 
-gem 'puma'
 
 gem "kramdown"
 gem "mixpanel-ruby"
 
+gem 'rack', '~> 2.2'
+gem 'puma'
+
 group :development do
-  gem "rerun"
+  # gem "rerun"
 end

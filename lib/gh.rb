@@ -9,7 +9,7 @@ class GH
   end
 
   SchemaFilePath = "data/github_schema.json"
-  Schema = if File.exists? SchemaFilePath
+  Schema = if File.exist? SchemaFilePath
     GQLClient.load_schema SchemaFilePath
   else
     GQLClient.load_schema HTTP
@@ -17,7 +17,7 @@ class GH
 
   Client = GQLClient.new schema: Schema, execute: HTTP
 
-  # TODO: load query.graphql
+  # TODO: extract in separate file
   ReposQuery = Client.parse <<-'GRAPHQL'
     query {
       user(login: "makevoid") {
@@ -26,7 +26,7 @@ class GH
           privacy: PUBLIC,
           isFork: false,
           orderBy: {
-            field: PUSHED_AT,
+            field: CREATED_AT,
             direction: DESC,
           },
           affiliations: OWNER,
@@ -70,14 +70,17 @@ class GH
   extend Cache
 
   def self.repos
-    # reset!
-    repositories = cache ReposQuery do
+    # reset_cache!
+    repositories_query = cache ReposQuery do
       GH::Client.query(ReposQuery).data
     end
-    repositories.user.repositories.edges.map &:node
+    # repositories_query = GH::Client.query(ReposQuery).data
+    user = repositories_query.user
+    repositories = user.repositories
+    repositories.edges.map &:node
   end
 
-  def self.reset!
+  def self.reset_cache!
     `rm -f #{APP_PATH}/tmp/cache/GH::ReposQuery.json`
   end
 

@@ -35,11 +35,11 @@ VIDEO_IDS = %w(
 
 MIX = Mixpanel::Tracker.new MIXPANEL_TOKEN
 
-require 'tilt/kramdown'
-module Haml::Filters
-  remove_filter("Markdown")
-  register_tilt_filter "Markdown", :template_class => Tilt::KramdownTemplate
-end
+# require 'tilt/kramdown'
+# module Haml::Filters
+#   remove_filter("Markdown")
+#   register_tilt_filter "Markdown", :template_class => Tilt::KramdownTemplate
+# end
 
 require "graphql/client/http"
 require_relative '../lib/monkeypatches'

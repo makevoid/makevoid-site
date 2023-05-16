@@ -44,11 +44,11 @@
                     :preserve
                       #{icon.to_html}
 
-      = partial "main_nav"
+      != partial "main_nav"
 
       %section.content
         .box
-          = yield
+          != yield
       .s50
 
     -# %script{ src: "/js/vendor/handlebars.js", type: "text/javascript" }

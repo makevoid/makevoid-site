@@ -1,3 +1,3 @@
 require 'etc'
-workers Etc.nprocessors
+workers 2
 preload_app!

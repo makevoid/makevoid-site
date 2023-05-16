@@ -1,9 +1,15 @@
-%h1 Open Source projects (latest)
+:css
+  h1.projects-title > span {
+    font-size: 0.6em;
+  }
+
+%h1.projects-title
+  Latest Open Source Projects
 
 .columns.is-multiline
   - GH.repos.each do |repo|
     - unless repo.repository_topics_include_filter_tag?
-      = partial "repo", locals: { repo: repo }
+      != partial "repo", locals: { repo: repo }
 
 .s20
 %p.is-size-4
