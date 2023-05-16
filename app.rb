@@ -10,7 +10,9 @@ class App < Roda
   plugin :not_found
   plugin :error_handler
   plugin :public
-  # plugin :basic_auth, authenticator: proc {|_, pass| pass == PASSWORD }, realm: 'Please enter ANY username and the password'
+  plugin :json
+  plugin :json_parser
+
 
   include RodaUtils
   include ViewHelpers
@@ -21,6 +23,12 @@ class App < Roda
       Thread.new { MIX.track 'anonymous', 'homepage-visit' }
 
       view 'index'
+    }
+
+    r.on("health") {
+      r.get {
+        { status: "ok" }
+      }
     }
 
     r.get("videos") {
