@@ -1,5 +1,5 @@
 version: "3.6"
-
+# build with platform linux/amd64
 services:
   app:
     image: makevoid/makevoid-site
@@ -7,3 +7,4 @@ services:
       - 3000:3000
     build:
       context: .
+    platform: linux/amd64

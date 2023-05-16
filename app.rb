@@ -29,6 +29,9 @@ class App < Roda
       r.get {
         { status: "ok" }
       }
+      r.head {
+        { status: "ok" }
+      }
     }
 
     r.get("videos") {
