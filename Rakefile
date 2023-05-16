@@ -25,12 +25,12 @@ task :repos do
 end
 
 desc "Build docker container"
-task :docker_build do
+task :compose_build do
   sh "docker-compose build"
 end
 
 desc "Build and push container release to dockerhub"
-task :docker_release do
+task :compose_release do
   sh "docker-compose build && docker-compose push"
 end
 
