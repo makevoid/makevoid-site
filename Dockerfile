@@ -1,9 +1,10 @@
 FROM ruby:3.2.2-alpine
 
 RUN mkdir -p /app
+RUN mkdir -p /app/config
 
 COPY Gemfile Gemfile.lock /app/
-COPY .bundle /app/
+COPY .bundle /app/.bundle
 
 WORKDIR /app
 
