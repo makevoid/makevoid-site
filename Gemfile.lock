@@ -48,7 +48,9 @@ GEM
     ostruct (0.6.3)
     puma (6.6.1)
       nio4r (~> 2.0)
-    rack (2.2.17)
+    rack (3.2.1)
+    rackup (2.2.1)
+      rack (>= 3)
     rexml (3.4.2)
     roda (3.95.0)
       rack
@@ -72,7 +74,8 @@ DEPENDENCIES
   mixpanel-ruby
   oj
   puma
-  rack (~> 2.2)
+  rack
+  rackup
   roda
 
 BUNDLED WITH

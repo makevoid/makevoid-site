@@ -12,7 +12,8 @@ gem 'graphql-client', require: 'graphql/client'
 gem "kramdown"
 gem "mixpanel-ruby"
 
-gem 'rack', '~> 2.2'
+gem 'rack'
+gem 'rackup'
 gem 'puma'
 
 group :development do

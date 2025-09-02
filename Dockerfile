@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-alpine
+FROM ruby:3.4.5-alpine
 
 RUN mkdir -p /app
 RUN mkdir -p /app/config
