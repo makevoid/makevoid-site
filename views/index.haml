@@ -1,7 +1,7 @@
 %h1.text-3xl.font-light.text-gray-900.mb-8.pb-4.border-b.border-gray-200
   Latest Open Source Projects
 
-.grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-6.auto-rows-fr
+#magic-grid.grid-container
   - GH.repos.each do |repo|
     - unless repo.repository_topics_include_filter_tag?
       != partial "repo", locals: { repo: repo }

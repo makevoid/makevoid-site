@@ -61,3 +61,29 @@ a {
 img {
   border: 0;
 }
+
+/* Magic Grid styling */
+#magic-grid {
+  position: relative;
+}
+
+.repo-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  break-inside: avoid;
+  box-sizing: border-box;
+}
+
+/* Responsive card widths for Magic Grid */
+@media (min-width: 768px) {
+  .repo-card {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .repo-card {
+    width: calc(33.333% - 16px);
+  }
+}
