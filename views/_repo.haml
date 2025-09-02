@@ -3,9 +3,9 @@
   stars = repo.stars_count
 
 .repo-card.mb-6
-  .bg-white.border.border-gray-200.rounded-lg.overflow-hidden.transition-shadow.hover:shadow-md
+  .bg-white.border.border-gray-200.rounded-lg.overflow-hidden.transition-shadow
     - if repo.image_exists?
-      .h-32.overflow-hidden.border-b.border-gray-100
+      .h-48.overflow-hidden.border-b.border-gray-100
         %img.w-full.h-full.object-cover{ alt: "Repository Screenshot", src: repo.screenshot_url }/
     .p-6
       %h3.text-lg.font-medium.text-gray-900.mb-3
