@@ -16,7 +16,28 @@ Oj.default_options = { mode: :object }
 
 require_relative '../lib/env_lib'
 Env.load!
-GITHUB_TOKEN = Env["GITHUB_TOKEN"]
+
+# Simple GitHub token loading with specific backup file
+def load_github_token
+  # 1. Check environment variable first
+  token = ENV["GITHUB_TOKEN"]
+  return token if token && !token.empty?
+  
+  # 2. Check .env files
+  Env.load! unless defined?(@@env)
+  token = @@env["GITHUB_TOKEN"] if defined?(@@env) && @@env
+  return token if token && !token.empty?
+  
+  # 3. Check backup file ~/.github_token_readonly
+  backup_file = File.expand_path("~/.github_token_readonly")
+  if File.exist?(backup_file)
+    return File.read(backup_file).strip
+  end
+  
+  nil
+end
+
+GITHUB_TOKEN = load_github_token
 MIXPANEL_TOKEN = Env["MIXPANEL_TOKEN"]
 
 # https://youtu.be/<video_id>

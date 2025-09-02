@@ -71,19 +71,11 @@ class GH
 
   def self.repos
     # Check if GitHub token is set
-    begin
-      token = GITHUB_TOKEN
-    rescue => e
+    if GITHUB_TOKEN.nil? || GITHUB_TOKEN.empty?
       raise "GitHub token not found! Please set GITHUB_TOKEN in one of these locations:\n" +
             "1. Environment variable: GITHUB_TOKEN=your_token\n" +
             "2. .env file: GITHUB_TOKEN=your_token\n" +
-            "3. ~/.github_token file containing your token\n" +
-            "4. .github_token file in project root\n\n" +
-            "Original error: #{e.message}"
-    end
-    
-    if token.nil? || token.empty?
-      raise "GitHub token is empty! Please set GITHUB_TOKEN with a valid GitHub personal access token."
+            "3. ~/.github_token_readonly file containing your token"
     end
 
     # reset_cache!

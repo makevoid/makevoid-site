@@ -1,12 +1,8 @@
 SOCIAL = {
   github: "https://github.com/makevoid",
   twitter: "https://twitter.com/makevoid",
-  youtube: "https://youtube.com/makevoid",
   instagram: "https://instagram.com/makevoid",
-  tiktok: "https://tiktok.com/@makevoid",
-  # twitter: "https://twitter.com/makevoid",
-  # twitter: "https://twitter.com/makevoid",
-  # twitter: "https://twitter.com/makevoid",
+  linkedin: "https://linkedin.com/in/makevoid",
 }
 
 SocialProfilesCheck = -> {

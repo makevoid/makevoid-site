@@ -93,11 +93,10 @@ Required environment variables (via .env files or environment):
 - `RACK_ENV`: Application environment (development/production)
 
 ### GitHub Token Configuration
-The custom Env library searches for `GITHUB_TOKEN` in this order:
+The application searches for `GITHUB_TOKEN` in this order:
 1. System environment variables (`GITHUB_TOKEN=your_token`)
 2. `.env` and `.env.local` files (`GITHUB_TOKEN=your_token`)
-3. `~/.github_token` file containing just the token
-4. `.github_token` file in project root
+3. `~/.github_token_readonly` file containing just the token
 
 ### Error Handling
 The application provides specific error messages for:
