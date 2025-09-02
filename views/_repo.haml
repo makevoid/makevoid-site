@@ -2,44 +2,25 @@
   url   = "https://github.com/makevoid/#{repo.name}"
   stars = repo.stars_count
 
-:css
-  .content .card-image > figure {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-  .card-image > figure > img { width: 100%; height: auto !important; max-height: 100px; }
-  .card-image { max-height: 100px; }
-
-.column.is-4-desktop.is-6
-  .card
+.mb-6
+  .bg-white.border.border-gray-200.rounded-lg.overflow-hidden.h-full.flex.flex-col.transition-shadow.hover:shadow-md
     - if repo.image_exists?
-      .card-image
-        .card-image-custom
-          %img{ alt: "Repository Screenshot", src: repo.screenshot_url }/
-    .card-content
-      %p.title.is-4
-        %a{href: url}= prettify_title repo.name
-      %p.subtitle.is-6
-        = repo.description
-      -# %p.updated_at
-      -#   = repo.updated_at
-      %p.tags
-        - repo.repository_topics_all.each do |topic|
-          %span.tag.is-info= topic.name
-        - repo.languages.edges.map(&:node).each do |lang|
-          %span.tag.is-primary= lang.name
-
-    -# %footer.card-footer
-    -#   %p.card-footer-item
-    -#     %span
-    -#       %a{href: url} View
-    -#   - if stars > 1
-    -#     %p.card-footer-item
-    -#       %span
-    -#         ★: #{stars}
-
-    - if stars > 1
-      %footer.card-footer
-        %p.card-footer-item
-          %span
-            ★ #{stars}
+      .h-32.overflow-hidden.border-b.border-gray-100
+        %img.w-full.h-full.object-cover{ alt: "Repository Screenshot", src: repo.screenshot_url }/
+    .p-6.flex-1.flex.flex-col
+      .flex-1
+        %h3.text-lg.font-medium.text-gray-900.mb-3
+          %a.hover:text-blue-600.transition-colors{href: url}= prettify_title repo.name
+        %p.text-gray-600.text-sm.mb-4.leading-relaxed
+          = repo.description
+      .mt-auto
+        .flex.flex-wrap.gap-2.mb-4
+          - repo.repository_topics_all.each do |topic|
+            %span.px-2.py-1.bg-blue-50.text-blue-700.text-xs.rounded-md.border.border-blue-200= topic.name
+          - repo.languages.edges.map(&:node).each do |lang|
+            %span.px-2.py-1.bg-gray-50.text-gray-700.text-xs.rounded-md.border.border-gray-200= lang.name
+        - if stars > 1
+          .pt-4.border-t.border-gray-100
+            .flex.items-center.text-gray-600.text-sm
+              %span.mr-1 ⭐
+              %span= stars

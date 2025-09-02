@@ -19,35 +19,34 @@
     %meta{ property: "og:site_name", content: "makevoid" }/
     %meta{ property: "og:image", content: "http://makevoid.com/imgs/makevoid_fb.jpg" }/
     %meta{ property: "fb:admins", content: "makevoid" }/
+    %script{ src: "https://cdn.tailwindcss.com" }
     %link{ href: "/css/vendor/bulma.css", type: "text/css", rel: "stylesheet" }
     %link{ href: "/css/style.css", type: "text/css", rel: "stylesheet" }
 
   -# ...
 
-  %body{ class: body_class }
-    .container
+  %body{ class: "#{body_class} bg-white min-h-screen" }
+    .container.max-w-6xl.mx-auto.px-4
 
-      %section.hero.is-primary.is-info.is-bold
-        .hero-body
-          .has-text-centered
-            %h1.title
-              %a{ href: "/" }
-                %img{ src: "/img/makevoid.png" }
-            .s5
-            %h2.subtitle
-              Francesco Canessa
-            %ul.social
-              - SOCIAL.each do |social_name, social_url|
-                - icon = Icon.new name: social_name
-                %li
-                  %a{ href: social_url }
-                    :preserve
-                      #{icon.to_html}
+      %section.bg-white.py-12.border-b.border-gray-200
+        .text-center
+          %h1.mb-4
+            %a{ href: "/" }
+              %img.mx-auto{ src: "/img/makevoid.png" }
+          %h2.text-2xl.font-light.text-gray-800.mb-6
+            Francesco Canessa
+          %ul.flex.justify-center.space-x-4
+            - SOCIAL.each do |social_name, social_url|
+              - icon = Icon.new name: social_name
+              %li
+                %a.text-gray-600.hover:text-gray-800.transition-colors{ href: social_url }
+                  :preserve
+                    #{icon.to_html}
 
       != partial "main_nav"
 
-      %section.content
-        .box
+      %section.py-8
+        .bg-white.border.border-gray-200.rounded-lg.p-6
           != yield
       .s50
 

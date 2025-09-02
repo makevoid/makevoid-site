@@ -2,10 +2,12 @@ html, html body {
   box-sizing: border-box;
 }
 
+/* Reset any conflicting Bulma styles */
 .content footer p:not(:last-child) {
   margin-bottom: 0;
 }
 
+/* Utility spacing classes */
 .s1  { height: 1px; }
 .s10 { height: 10px; }
 .s20 { height: 20px; }
@@ -19,56 +21,43 @@ html, html body {
 .hs40 { margin-left: 40px; }
 .hs50 { margin-left: 50px; }
 
-
+/* Override Bulma background */
 body, html {
-  background: #FAFAFA;
+  background: #ffffff !important;
 }
 
-.hero-body h1.title > a {
-  text-decoration: none; border: 0;
+/* Clean link styling */
+a {
+  text-decoration: none;
 }
 
-.card-content p.title {
-  margin-bottom: 31px;
+/* Social icons styling */
+.social svg {
+  width: 24px;
+  height: 24px;
 }
 
-.tags .tag.is-info {
-  background-color: rgba(32, 156, 238, 0.8);
+/* Ensure grid items have equal height */
+.auto-rows-fr {
+  grid-auto-rows: 1fr;
 }
 
-.tags .tag.is-primary {
-  background-color: rgba(32, 156, 238, 1);
+/* Card hover effects */
+.hover\:shadow-md:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.social > li {
-  display: inline-block;
-  margin-right: 3px;
+/* Ensure cards fill their grid containers */
+.h-full {
+  height: 100%;
 }
 
-.social > li > a > .icon {
-  filter: invert(100%);
+/* Override any Bulma container styles */
+.container {
+  max-width: none !important;
 }
 
-/* helpers */
-
-.align-right {
-  float: right;
-}
-
-.updated_at_lable {
-  margin-right: 3%;
-  margin-top: 6px;
-  padding-bottom: 10px;
-}
-
-.card > .card-image {
-  min-height: 160px;
-}
-
-.card > .card-image > .card-image-custom {
-  max-height: 160px;
-  overflow: hidden;
-}
-
-.card > .card-image > .card-image-custom > img {
+/* Clean image styling */
+img {
+  border: 0;
 }

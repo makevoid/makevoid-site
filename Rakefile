@@ -24,6 +24,12 @@ task :repos do
   pp repos
 end
 
+desc "Reset cache - clears GitHub API cache"
+task :reset do
+  GH.reset_cache!
+  puts "GitHub API cache cleared"
+end
+
 desc "Build docker container"
 task :compose_build do
   sh "docker-compose build"

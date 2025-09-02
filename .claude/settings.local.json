@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rake repos:*)",
+      "Read(/Users/makevoid/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

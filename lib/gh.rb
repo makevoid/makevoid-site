@@ -70,12 +70,43 @@ class GH
   extend Cache
 
   def self.repos
+    # Check if GitHub token is set
+    begin
+      token = GITHUB_TOKEN
+    rescue => e
+      raise "GitHub token not found! Please set GITHUB_TOKEN in one of these locations:\n" +
+            "1. Environment variable: GITHUB_TOKEN=your_token\n" +
+            "2. .env file: GITHUB_TOKEN=your_token\n" +
+            "3. ~/.github_token file containing your token\n" +
+            "4. .github_token file in project root\n\n" +
+            "Original error: #{e.message}"
+    end
+    
+    if token.nil? || token.empty?
+      raise "GitHub token is empty! Please set GITHUB_TOKEN with a valid GitHub personal access token."
+    end
+
     # reset_cache!
     repositories_query = cache ReposQuery do
-      GH::Client.query(ReposQuery).data
+      result = GH::Client.query(ReposQuery)
+      if result.errors.any?
+        error_messages = result.errors.inspect
+        if error_messages.include?("401 Unauthorized")
+          raise "GitHub API Authentication Failed: Invalid or expired token. Please check your GITHUB_TOKEN."
+        else
+          raise "GitHub API Error: #{error_messages}"
+        end
+      end
+      result.data
     end
+    
     # repositories_query = GH::Client.query(ReposQuery).data
     user = repositories_query.user
+    
+    if user.nil?
+      raise "GitHub user 'makevoid' not found. Please check the username in the GraphQL query."
+    end
+    
     repositories = user.repositories
     repositories.edges.map &:node
   end
